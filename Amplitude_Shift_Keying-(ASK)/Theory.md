@@ -84,7 +84,6 @@ This increases the number of bits transmitted per symbol.
 
 ---
 
-
 # Symbol Rate
 
 Each transmitted amplitude corresponds to one symbol.
@@ -117,6 +116,9 @@ depending on
 - filtering
 - implementation
 
+  <img width="567" height="223" alt="image" src="https://github.com/user-attachments/assets/42e837a7-e806-4e16-b5e4-75fbaac9f127" />
+
+
 Practical systems often use pulse shaping filters to reduce bandwidth.
 
 ---
@@ -147,28 +149,6 @@ ASK is highly affected by
 because information is stored in the amplitude.
 
 Any noise that changes amplitude may cause errors.
-
-Example
-
-Transmitted
-
-```
-High Amplitude
-```
-
-Noise
-
-```
-↓↓↓↓↓↓
-```
-
-Received
-
-```
-Medium Amplitude
-```
-
-Receiver may incorrectly detect the bit.
 
 ---
 
@@ -209,17 +189,6 @@ ASK is commonly used in
 - Low-Cost RF Modules
 - Remote Keyless Entry Systems
 - Industrial Telemetry
-
----
-
-# Comparison with Other Modulation Schemes
-
-| Technique | Amplitude | Frequency | Phase |
-|------------|-----------|-----------|-------|
-| ASK | ✅ Changes | ❌ Constant | ❌ Constant |
-| FSK | ❌ Constant | ✅ Changes | ❌ Constant |
-| PSK | ❌ Constant | ❌ Constant | ✅ Changes |
-| QAM | ✅ Changes | ❌ Constant | ✅ Changes |
 
 ---
 
