@@ -3,7 +3,7 @@
 
 Imagine you are listening to your favorite song
 
-<img width="640" height="480" alt="image" src="https://github.com/user-attachments/assets/ec1199ce-15b9-4bbb-aff8-626ab600bd08" />
+<img width="340" height="280" alt="image" src="https://github.com/user-attachments/assets/ec1199ce-15b9-4bbb-aff8-626ab600bd08" />
 
 When a singer performs, their voice is a **continuous sound wave**. It changes smoothly over time.
 
@@ -12,144 +12,33 @@ When a singer performs, their voice is a **continuous sound wave**. It changes s
 
 This type of signal is called an **analog signal**.
 
-Now think about how Spotify, YouTube, or your phone stores that same song.
+Now think about how Spotify, YouTube, or your phone stores that same song. Computers cannot directly store continuous analog signals. Instead, they convert them into numbers. But how can a continuously changing signal become numbers?
 
-Computers cannot directly store continuous analog signals.
+The answer is **Sampling**
 
-Instead, they convert them into numbers.
-
-But how can a continuously changing signal become numbers?
-
-The answer is
-
-> **Sampling**
-
-Sampling is the **first step** in converting real-world analog signals into digital data.
-
-Without sampling,
-
-there would be no
-
-- Digital music
-- Digital cameras
-- Mobile phones
-- Internet calls
-- Medical imaging
-- Software Defined Radio (SDR)
-- Digital television
-- GPS receivers
-
-Sampling is one of the most fundamental concepts in digital signal processing and communication.
+Sampling is the **first step** in converting real-world analog signals into digital data. Without sampling, there would be no Digital music, Digital cameras, Mobile phones, Internet calls, Digital television etc.,. **Sampling.** is one of the most fundamental concepts in digital signal processing and communication.
 
 ---
 
 # Why Do We Need Sampling?
 
-Modern electronic devices are digital.
-
-Examples include
-
-- Smartphones
-- Computers
-- Tablets
-- Raspberry Pi
-- Arduino
-- DSP Processors
-- FPGA Boards
-
-Digital devices understand only
-
-```
-0 and 1
-```
-
-However,
-
-the real world is analog.
-
-Examples include
-
-- Human voice
-- Music
-- Radio waves
-- Temperature
-- Pressure
-- Light intensity
-
-These signals vary continuously.
-
-Digital systems cannot directly process continuous signals.
-
-Therefore,
-
-we first convert them into a digital form.
-
-The very first step of this conversion is
-
-**Sampling.**
+Modern electronic devices are digital. Digital devices understand only 0s and 1s. However, the real world is analog. Human voice, Music, Radio waves, Temperature, Pressure, Light intensity - all of these signals vary continuously. Digital systems cannot directly process continuous signals. Therefore, we first convert them into a digital form. The very first step of this conversion is **Sampling.**
 
 ---
 
 # The Digital Revolution
 
-Before digital electronics became common,
+Before digital electronics became common, communication systems were almost entirely analog.
 
-communication systems were almost entirely analog.
+<img width="1312" height="630" alt="image" src="https://github.com/user-attachments/assets/e8548e6b-675b-4d3d-a66e-fd86a98e48d7" />
 
-Examples include
-
-- Analog telephones
-- AM Radio
-- FM Radio
-- Analog television
-
-Today,
-
-almost every communication system is digital.
-
-Examples include
-
-- 4G
-- 5G
-- Wi-Fi
-- Bluetooth
-- GPS
-- Satellite Communication
-- Voice over IP (VoIP)
-
-Although these systems transmit digital information,
-
-the original information often starts as an analog signal.
+Today, almost every communication system is digital. Although these systems transmit digital information, the original information often starts as an analog signal.
 
 For example,
 
-```
-Human Voice
+<img width="1717" height="531" alt="image" src="https://github.com/user-attachments/assets/8b57922c-721a-42ae-948d-8aeb23b3c337" />
 
-↓
-
-Microphone
-
-↓
-
-Electrical Analog Signal
-
-↓
-
-Sampling
-
-↓
-
-Digital Signal
-
-↓
-
-Transmission
-```
-
-Without sampling,
-
-digital communication would not exist.
+Without sampling, digital communication would not exist.
 
 ---
 
@@ -159,80 +48,26 @@ digital communication would not exist.
 
 **Sampling is the process of measuring the value of a continuous-time signal at specific intervals of time to produce a discrete-time signal.**
 
-Simply put,
-
-instead of recording **every instant** of a signal,
-
-we record only selected points.
-
-Imagine taking snapshots of a moving object.
-
-Instead of recording every possible moment,
-
+Simply put, instead of recording **every instant** of a signal, we record only selected points. Imagine taking snapshots of a moving object.Instead of recording every possible moment,
 you capture
 
-```
-●      ●      ●      ●      ●
-```
+<img width="1024" height="556" alt="image" src="https://github.com/user-attachments/assets/ae1b221f-d51e-48a2-b249-c7c528335c79" />
+_src: https://www.joecrowtheaudiopro.com/2020/12/01/what-sample-rate-should-you-use-for-home-recording/_
 
-Each dot represents one **sample**.
-
-The collection of these samples can later be used to reconstruct the original signal.
+Each dot represents one **sample**. The collection of these samples can later be used to reconstruct the original signal.
 
 ---
 
 # Visualizing Sampling
 
-Suppose the original analog signal is
+<img width="1408" height="768" alt="image" src="https://github.com/user-attachments/assets/3c797372-995d-4c15-b914-8fdf9227ef14" />
 
-```
-          /\        /\
-         /  \      /  \
-        /    \    /    \
-_______/      \__/      \_____
-```
+The smooth curve is the original signal. The dots are the sampled values.
 
-After sampling,
+Imagine watching a football match. Instead of watching the entire game, someone takes a photograph every second. Each photograph captures the scene at a specific instant. Together,the photographs provide a good representation of the game. Sampling works the same way. Instead of recording every instant, the system records the signal at regular intervals.
 
-```
-          ●         ●
-        ●   ●     ●   ●
-______●______●___●______●_____
-```
+<img width="600" height="399" alt="image" src="https://github.com/user-attachments/assets/0bff48f5-deb2-4d97-bcdb-000b07a62dbd" />
 
-The smooth curve is the original signal.
-
-The dots are the sampled values.
-
----
-
-# A Real-World Analogy
-
-Imagine watching a football match.
-
-Instead of watching the entire game,
-
-someone takes a photograph every second.
-
-```
-Time
-
-0 s   1 s   2 s   3 s   4 s
-
-📸    📸    📸    📸    📸
-```
-
-Each photograph captures the scene at a specific instant.
-
-Together,
-
-the photographs provide a good representation of the game.
-
-Sampling works the same way.
-
-Instead of recording every instant,
-
-the system records the signal at regular intervals.
 
 ---
 
