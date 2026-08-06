@@ -56,6 +56,16 @@ _src: https://www.joecrowtheaudiopro.com/2020/12/01/what-sample-rate-should-you-
 
 Each dot represents one **sample**. The collection of these samples can later be used to reconstruct the original signal.
 
+One of the best ways to understand **sampling** is by thinking about a **flip book**. A flip book consists of many individual drawings. Each page contains a slightly different picture.
+When you quickly flip through the pages, your brain combines these individual pictures into one smooth animation.
+
+![](https://media.tenor.com/LObSVl8_f3gAAAAM/stop-motion-art.gif)
+
+source: Tenor
+
+Each page is a **snapshot** of the moving object. These snapshots are called **samples**. The motion you see is created from these individual samples.
+
+
 ---
 
 # Visualizing Sampling
@@ -66,8 +76,12 @@ The smooth curve is the original signal. The dots are the sampled values.
 
 Imagine watching a football match. Instead of watching the entire game, someone takes a photograph every second. Each photograph captures the scene at a specific instant. Together,the photographs provide a good representation of the game. Sampling works the same way. Instead of recording every instant, the system records the signal at regular intervals.
 
-<img width="600" height="399" alt="image" src="https://github.com/user-attachments/assets/0bff48f5-deb2-4d97-bcdb-000b07a62dbd" />
+![](https://happyphotodad.wordpress.com/wp-content/uploads/2015/09/20130921-110846-animated2.gif)
 
+src: https://happyphotodad.wordpress.com/2016/02/21/life-at-8-fps/
+
+Sampling allows digital systems to process real-world signals. Once a signal has been sampled, we can store it, compress it, encrypt it, filter it, transmit it, analyze it or even reconstruct it later
+Without sampling, modern communication technologies would not be possible.
 
 ---
 
@@ -75,194 +89,54 @@ Imagine watching a football match. Instead of watching the entire game, someone 
 
 ## Digital Audio
 
-When recording music,
+When recording music, the microphone captures analog sound. The Analog-to-Digital Converter (ADC) samples it thousands of times every second.
+For example, Audio CDs use 44,100 samples every second. This is called a 44.1 kHz Sampling Rate
 
-the microphone captures analog sound.
+<img width="360" height="168" alt="image" src="https://github.com/user-attachments/assets/391073ba-ac7f-437c-b380-7abfc1587176" />
 
-The Analog-to-Digital Converter (ADC) samples it thousands of times every second.
-
-For example,
-
-Audio CDs use
-
-```
-44,100 samples every second
-```
-
-This is called a
-
-```
-44.1 kHz Sampling Rate
-```
-
----
-
-## Digital Camera
-
-A real-world scene is continuous.
-
-A camera samples the light using millions of pixels.
-
-Each pixel measures the brightness and color at one location.
-
-Together,
-
-the pixels reconstruct the entire image.
-
----
 
 ## Video
 
-A movie is actually a sequence of sampled images.
+A movie is actually a sequence of sampled images. For example, 30 frames per second means 30 image samples every second.
 
-For example,
-
-```
-30 frames per second
-```
-
-means
-
-```
-30 image samples every second.
-```
-
+![](https://gdgtme.com/wp-content/uploads/2020/08/fps2.gif)
 ---
 
-## Temperature Sensor
-
-Suppose a weather station measures temperature every second.
-
-```
-12:00:00
-
-25°C
-
-12:00:01
-
-25.1°C
-
-12:00:02
-
-25.2°C
-
-12:00:03
-
-25.2°C
-```
-
-Each measurement is a sample.
-
----
-
-## GPS Receiver
-
-A GPS receiver continuously receives radio signals from satellites.
-
-These incoming analog signals are sampled before digital processing begins.
-
-Without sampling,
-
-the receiver cannot determine your position.
-
----
-
-## Software Defined Radio (SDR)
-
-In SDR,
-
-the antenna receives analog radio waves.
-
-The Analog-to-Digital Converter samples the signal,
-
-allowing software to perform filtering, demodulation, decoding, and signal analysis.
-
----
 
 # The Complete Signal Journey
 
 Almost every modern communication system follows this sequence:
 
+```mermaid
+graph TD
+    classDef physical fill:#FFF3CD,stroke:#D39E00,stroke-width:2px,color:#333;
+    classDef analog fill:#CCE5FF,stroke:#004085,stroke-width:2px,color:#333;
+    classDef conversion fill:#D4EDDA,stroke:#155724,stroke-width:2px,color:#333;
+    classDef digital fill:#E2E3E5,stroke:#383D41,stroke-width:2px,color:#333;
+
+    A[Real World Signal] --> B[Sensor / Antenna / Microphone]
+    B --> C[Analog Signal]
+    C --> D[Sampling]
+    D --> E[Quantization]
+    E --> F[Encoding]
+    F --> G[Digital Data]
+    G --> H[Digital Processing]
+    H --> I[Transmission or Storage]
+
+    class A,B physical;
+    class C analog;
+    class D,E,F conversion;
+    class G,H,I digital;
 ```
-Real World Signal
 
-↓
-
-Sensor / Antenna / Microphone
-
-↓
-
-Analog Signal
-
-↓
-
-Sampling
-
-↓
-
-Quantization
-
-↓
-
-Encoding
-
-↓
-
-Digital Data
-
-↓
-
-Digital Processing
-
-↓
-
-Transmission or Storage
-```
 
 Sampling is the bridge between the analog world and the digital world.
 
 ---
 
-# Why Sampling is Important in Digital Communication
-
-Sampling allows digital systems to process real-world signals.
-
-Once a signal has been sampled,
-
-we can
-
-- Store it
-- Compress it
-- Encrypt it
-- Filter it
-- Transmit it
-- Analyze it
-- Reconstruct it later
-
-Without sampling,
-
-modern communication technologies such as
-
-- Wi-Fi
-- Bluetooth
-- LTE
-- 5G
-- SDR
-- Digital Television
-
-would not be possible.
-
----
-
 # Summary
 
-Sampling is the process of converting a continuous-time signal into a discrete-time signal by measuring its value at regular intervals.
-
-It forms the foundation of digital communication and digital signal processing.
-
-Every digital communication system begins by sampling the incoming analog signal before any digital processing takes place.
-
-Understanding sampling is essential before learning topics such as
+Sampling is the process of converting a continuous-time signal into a discrete-time signal by measuring its value at regular intervals. It forms the foundation of digital communication and digital signal processing. Every digital communication system begins by sampling the incoming analog signal before any digital processing takes place. Understanding sampling is essential before learning topics such as
 
 - Nyquist Sampling Theorem
 - Aliasing
@@ -274,18 +148,3 @@ Understanding sampling is essential before learning topics such as
 These topics will be covered in the following modules.
 
 ---
-
-# Key Takeaways
-
-- The real world is mostly analog.
-- Digital devices process information digitally.
-- Sampling converts continuous-time signals into discrete-time signals.
-- Each measurement taken is called a **sample**.
-- Sampling is the first step in analog-to-digital conversion.
-- Modern communication systems rely on sampling before digital processing begins.
-
----
-
-# What's Next?
-
-In the next module, we will explore the differences between **Analog Signals** and **Digital Signals**, understand their characteristics, and learn why digital communication has largely replaced analog communication.
