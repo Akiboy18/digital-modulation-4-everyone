@@ -1,69 +1,15 @@
 # Module 7: Nyquist Rate and Nyquist Frequency
 
-> **Difficulty:** 🟡 Intermediate
->
-> **Prerequisites:**
->
-> - Module 1 – Introduction to Sampling
-> - Module 2 – Analog vs Digital Signals
-> - Module 3 – Continuous-Time vs Discrete-Time Signals
-> - Module 4 – Continuous vs Discrete Amplitude
-> - Module 5 – What is Sampling?
-> - Module 6 – Sampling Theorem
+In the previous module, we learned the Sampling Theorem. The theorem states
 
----
-
-# Table of Contents
-
-- Learning Objectives
-- Introduction
-- Why Another Module?
-- What is the Nyquist Rate?
-- Understanding Nyquist Rate
-- Examples
-- What is the Nyquist Frequency?
-- Nyquist Rate vs Nyquist Frequency
-- Why Students Get Confused
-- Practical Examples
-- Summary
-- Key Takeaways
-
----
-
-# Learning Objectives
-
-After completing this module, you will be able to
-
-- Define the Nyquist Rate.
-- Define the Nyquist Frequency.
-- Differentiate between the two.
-- Calculate both quantities.
-- Understand why they are often confused.
-
----
-
-# Introduction
-
-In the previous module, we learned the Sampling Theorem.
-
-The theorem states
-
-```
-Sampling Frequency ≥ 2 × Highest Signal Frequency
-```
+**Sampling Frequency ≥ 2 × Highest Signal Frequency**
 
 This equation introduces two important terms
 
 - Nyquist Rate
 - Nyquist Frequency
 
-Although they sound similar,
-
-they are **not the same thing**.
-
-Many students mistakenly use them interchangeably.
-
-This module explains the difference.
+Although they sound similar, they are **not the same thing**. Many of us mistakenly use them interchangeably. This module explains the difference.
 
 ---
 
@@ -73,15 +19,12 @@ The **Nyquist Rate** is the **minimum sampling frequency required to perfectly r
 
 According to the Sampling Theorem,
 
-```
-Nyquist Rate = 2 × Highest Frequency Component
-```
+**Nyquist Rate = 2 × Highest Frequency Component**
 
 or
 
-```
 Fs(min) = 2Fmax
-```
+
 
 where
 
@@ -92,80 +35,26 @@ The Nyquist Rate tells us
 
 > **"How fast must we sample?"**
 
----
+Suppose the highest frequency in a signal is 5 kHz
 
-# Example 1
+Then Nyquist Rate = 2 × 5 kHz = 10 kHz
 
-Suppose the highest frequency in a signal is
+Therefore, the signal must be sampled at **10 kHz or higher**.
 
-```
-5 kHz
-```
-
-Then
-
-```
-Nyquist Rate
-
-= 2 × 5 kHz
-
-= 10 kHz
-```
-
-Therefore,
-
-the signal must be sampled at **10 kHz or higher**.
-
----
-
-# Example 2
-
-Human hearing extends to approximately
-
-```
-20 kHz.
-```
-
-The Nyquist Rate becomes
-
-```
-2 × 20 kHz
-
-= 40 kHz
-```
-
-This is why audio systems sample slightly above this value.
-
-For example,
-
-Audio CDs use
-
-```
-44.1 kHz
-```
-
-which satisfies the Sampling Theorem while allowing room for practical filters.
+Human hearing extends to approximately 20 kHz. The Nyquist Rate becomes 2 × 20 kHz = 40 kHz
+This is why audio systems sample slightly above this value. Audio CDs use 44.1 kHz which satisfies the Sampling Theorem while allowing room for practical filters.
 
 ---
 
 # What is the Nyquist Frequency?
 
-The **Nyquist Frequency** is **half of the sampling frequency**.
+The **Nyquist Frequency** is **half of the sampling frequency**. 
 
-Mathematically,
+Mathematically, Nyquist Frequency = Sampling Frequency / 2
 
-```
-Nyquist Frequency = Sampling Frequency / 2
-```
-
-or
-
-```
-FN = Fs / 2
-```
+> FN = Fs / 2
 
 where
-
 - **FN** = Nyquist Frequency
 - **Fs** = Actual sampling frequency
 
@@ -173,55 +62,11 @@ The Nyquist Frequency tells us
 
 > **"What is the highest signal frequency that can be represented without aliasing for a given sampling rate?"**
 
----
+Suppose an ADC samples at 48 kHz, Then Nyquist Frequency = 48 / 2 = 24 kHz
+So, Signals above 24 kHz cannot be represented correctly unless removed before sampling.
 
-# Example 1
 
-Suppose an ADC samples at
-
-```
-48 kHz
-```
-
-Then
-
-```
-Nyquist Frequency
-
-= 48 / 2
-
-= 24 kHz
-```
-
-Signals above
-
-```
-24 kHz
-```
-
-cannot be represented correctly unless removed before sampling.
-
----
-
-# Example 2
-
-Suppose
-
-```
-Sampling Frequency
-
-= 10 MHz
-```
-
-Then
-
-```
-Nyquist Frequency
-
-= 5 MHz
-```
-
-The ADC can correctly represent frequency components only up to
+Suppose Sampling Frequency = 10 MHz, Then Nyquist Frequency = 5 MHz. So the ADC can correctly represent frequency components only up to
 
 ```
 5 MHz.
