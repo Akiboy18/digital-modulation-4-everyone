@@ -85,51 +85,10 @@ This is the easiest way to remember the difference.
 
 # Visual Comparison
 
-Suppose the signal contains frequencies up to
+Suppose the signal contains frequencies up to 8 kHz. Then Nyquist Rate = 16 kHz
+Now suppose we actually sample at 20 kHz. The Nyquist Frequency becomes 20 / 2 = 10 kHz.
 
-```
-8 kHz.
-```
-
-Then
-
-```
-Nyquist Rate
-
-= 16 kHz
-```
-
-Now suppose we actually sample at
-
-```
-20 kHz.
-```
-
-The Nyquist Frequency becomes
-
-```
-20 / 2
-
-= 10 kHz.
-```
-
-Notice
-
-```
-Nyquist Rate
-
-16 kHz
-```
-
-and
-
-```
-Nyquist Frequency
-
-10 kHz
-```
-
-They are different quantities.
+Notice Nyquist Rate = 16 kHz and Nyquist Frequency 10 kHz - They are different quantities.
 
 ---
 
