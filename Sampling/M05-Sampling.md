@@ -32,7 +32,7 @@ Each voltage measurement is one sample.
 
 ---
 
-# Sampling Interval
+## Sampling Interval
 
 The **Sampling Interval** is the time between two consecutive samples. It is represented by T<sub>s</sub> where T<sub>s</sub> = Sampling Interval
 
@@ -42,14 +42,14 @@ _src: National Instruments_
 
 ---
 
-# Sampling Rate
+## Sampling Rate
 
 The **Sampling Rate** tells us how many samples are taken every second. It is represented by F<sub>s</sub>, where F<sub>s</sub> = Samples per Second. Its unit is Hz
 1 Hz = 1 Sample per Second. Suppose we take 1000 samples every second. Then Sampling Rate Fs = 1000 Hz
 
 ---
 
-# Relationship Between Sampling Rate and Sampling Interval
+## Relationship Between Sampling Rate and Sampling Interval
 
 Sampling Interval and Sampling Rate are inverses of each other. Sampling Rate Fs = 1 / Ts
 
@@ -57,9 +57,8 @@ where
 - **Fs** = Sampling Rate (Hz)
 - **Ts** = Sampling Interval (seconds)
 
----
 
-## Example
+#### Example
 
 If Ts = 1 ms , Then Fs = 1 / 0.001 = 1000 Hz
 
@@ -76,11 +75,9 @@ flowchart TD
     F --> G[Digital Processing]
     G --> H[Transmission]
 
-```
-
 ---
 
-# Summary
+## Summary
 
 Sampling converts a continuous-time signal into a discrete-time signal by measuring its value at regular intervals. Each measurement is called a sample. The time between samples is called the sampling interval. The number of samples taken every second is called the sampling rate. Sampling forms the foundation of digital communication and digital signal processing.
 
