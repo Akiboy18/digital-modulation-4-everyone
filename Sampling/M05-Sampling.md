@@ -66,6 +66,7 @@ If Ts = 1 ms , Then Fs = 1 / 0.001 = 1000 Hz
 
 Every digital communication system begins with sampling.
 
+```mermaid
 flowchart TD
     A[Voice] --> B[Microphone]
     B --> C[Analog Signal]
@@ -74,6 +75,7 @@ flowchart TD
     E --> F[ADC]
     F --> G[Digital Processing]
     G --> H[Transmission]
+```
 
 ---
 
