@@ -66,11 +66,7 @@ Suppose an ADC samples at 48 kHz, Then Nyquist Frequency = 48 / 2 = 24 kHz
 So, Signals above 24 kHz cannot be represented correctly unless removed before sampling.
 
 
-Suppose Sampling Frequency = 10 MHz, Then Nyquist Frequency = 5 MHz. So the ADC can correctly represent frequency components only up to
-
-```
-5 MHz.
-```
+Suppose Sampling Frequency = 10 MHz, Then Nyquist Frequency = 5 MHz. So the ADC can correctly represent frequency components only up to 5 MHz.
 
 ---
 
